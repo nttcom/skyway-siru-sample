@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 export const SkyWayVideo = (props) => {
   if(props.streamurl) {
       return (
-        <div>
-          <video src={props.streamurl} autoPlay></video>
+        <div style={{maxWidth: "720px", margin: "auto"}}>
+          <video style={{width: "100%"}} src={props.streamurl} autoPlay></video>
         </div>
       )
   } else {

@@ -68,11 +68,11 @@ export default function siruReducer (state = initialState, action) {
       .forEach(device => {
         device.topics.filter(topic => topic.name === p.topic)
           .forEach(topic => {
+            if(!topic.data) topic.data = [] // initialize if it is not exist
+            topic.data.push(Object.assign({}, p.metric, {name: topic.name, title: topic.title, timestamp: Date.now()}))
+            if(topic.data.length > 60) topic.data.shift()
             topic.properties.forEach(property => {
               property.last = p.metric[property.name]
-              if(!property.data) property.data = [] // initilize if it is not exist
-              property.data.push(p.metric[property.name]) // fixme - keep max size equal 60
-              if(property.data.length > 60) property.data.shift()
             })
           })
       })
