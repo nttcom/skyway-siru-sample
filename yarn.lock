@@ -13,9 +13,9 @@ JSONStream@^1.0.3:
     jsonparse "^1.2.0"
     through ">=2.2.7 <3"
 
-"SiRu-client@https://ghe.nttcloud.net/SkyWay/SiRu-client.git":
+"SiRu-client@git+https://ghe.nttcloud.net/SkyWay/SiRu-client.git":
   version "0.0.1"
-  resolved "https://ghe.nttcloud.net/SkyWay/SiRu-client.git#4ee28b07a90670a03822cc366fe15756ee058d10"
+  resolved "git+https://ghe.nttcloud.net/SkyWay/SiRu-client.git#4ee28b07a90670a03822cc366fe15756ee058d10"
   dependencies:
     enum "git+https://github.com/eastandwest/enum.git#react-native"
     events "^1.1.0"

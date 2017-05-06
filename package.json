@@ -76,7 +76,7 @@
   "author": "David Zukowski <david@zuko.me> (http://zuko.me)",
   "license": "MIT",
   "dependencies": {
-    "SiRu-client": "https://ghe.nttcloud.net/SkyWay/SiRu-client.git",
+    "SiRu-client": "git+https://ghe.nttcloud.net/SkyWay/SiRu-client.git",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-runtime": "^6.15.0",
