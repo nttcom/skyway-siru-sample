@@ -21,7 +21,17 @@ function subscribe(topics) {
 }
 
 export default function start({dispatch}, {apikey, roomname}) {
-  client = new SiRuClient(roomname, {key: apikey})
+  // user=siruuser:s1rUu5ev
+  const config = { 'iceServers': [
+      { 'url': 'stun:stun.skyway.io:3478' },
+      {
+        'url': 'turn:52.41.145.197:443?transport=tcp',
+        'credential': 's1rUu5ev',
+        'username': 'siruuser'
+      }
+    ] 
+  }
+  client = new SiRuClient(roomname, {key: apikey, config})
   let uuid
 
   client.on('connect', () => {
