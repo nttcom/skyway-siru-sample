@@ -45,10 +45,52 @@ function renderMetrics(topics) {
   }
 }
 
+function renderHistories(topics) {
+  if(topics.length > 0) {
+    return topics.map((topic, index) => {
+      if(!topic.history || topic.history.length === 0) return (
+        <div key={index}>no data</div>
+      )
+      const chartSeries = topic.properties.map(property => {
+        return {
+          field: property.name,
+          name:  property.description
+        }
+      })
+      
+      const linechart_params = {
+        showXGrid: true,
+        showYGrid: true,
+        margins: {left:50, right: 100, top:5, bottom:30},
+        title: topic.title, 
+        data: topic.history || [], 
+        height: 300, 
+        chartSeries, 
+        x: function(d) { return d.timestamp },
+        xScale: 'time',
+        yTickFormat: d3.format(".2s"),
+        xAxis: d3.svg.axis().orient('top')
+      }
+
+      return (
+        <div key={index} className="col-xs-12 col-sm-12 placeholder">
+          <h4>{topic.title}</h4>
+          <LineChart {...linechart_params} />
+        </div>
+      )
+    })
+  } else {
+    return []
+  }
+}
+
+
+
 function renderDevices(devices) {
   if (devices.length > 0) {
     return devices.map( (device, index) => {
       const metrics = renderMetrics(device.topics)
+      const histories = renderHistories(device.topics)
       return (
       <div key={index}>
         <div className="row placeholders">
@@ -64,7 +106,12 @@ function renderDevices(devices) {
           </div>
         </div>
         <div className="row placeholders">
+          <h4>realtime monitor</h4>
           {metrics}
+        </div>
+        <div className="row placeholders">
+          <h4>history data</h4>
+          {histories}
         </div>
       </div>
       )

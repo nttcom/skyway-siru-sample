@@ -4,6 +4,7 @@ import {
   connected,
   add_device,
   add_metric,
+  update_history,
   stream_start
 } from '../siru'
 
@@ -44,6 +45,26 @@ export default function start({dispatch}, {apikey, roomname}) {
 
     dispatch(add_device(meta))
     if(meta.topics instanceof Array) subscribe(meta.topics)
+    client.fetch(uuid+'/metrics/12', {})
+      .then(res  => res.json()) 
+      .then(json => {
+        const histories = {}
+
+        json.forEach(data => {
+          // example data: {"name_cpu":{"1min":0, "5min": 1}, "temperature", "timestamp"}
+          for(var key in data) if(data.hasOwnProperty(key)) {
+            if(key !== "timestamp") {
+              var topic = key.replace("_", "/")
+              if(!histories[topic]) histories[topic] = []
+              histories[topic].push(Object.assign({}, data[key], {timestamp: data.timestamp}))
+            }
+          }
+        })
+        console.log(histories)
+
+        for(var topic in histories) dispatch(update_history({uuid, topic, history: histories[topic]}))
+      })
+      .catch(err => console.warn(err))
 
     if(meta.streaming && meta.streaming.enable) {
       client.requestStreaming(uuid)
