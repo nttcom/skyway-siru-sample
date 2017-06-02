@@ -71,10 +71,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davezuko/react-redux-starter-kit.git"
+    "url": "git+https://github.com/nttcom/skyway-siru-sample.git"
   },
-  "author": "David Zukowski <david@zuko.me> (http://zuko.me)",
-  "license": "MIT",
+  "author": {
+    "name": "NTT Communications, Corp.",
+    "url": "http://skyway.io/en"
+  },
+  "license": "Apache 2.0",
   "dependencies": {
     "SiRu-client": "git+https://ghe.nttcloud.net/SkyWay/SiRu-client.git",
     "babel-core": "^6.17.0",
