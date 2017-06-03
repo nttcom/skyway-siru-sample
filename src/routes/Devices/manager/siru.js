@@ -6,7 +6,7 @@ import {
   add_metric,
   update_history,
   stream_start
-} from '../siru'
+} from '../modules/siru'
 
 let client;
 
@@ -22,7 +22,6 @@ function subscribe(topics) {
 }
 
 export default function start({dispatch}, {apikey, roomname}) {
-  // user=siruuser:s1rUu5ev
   const config = { 'iceServers': [
       { 'url': 'stun:stun.skyway.io:3478' },
       {

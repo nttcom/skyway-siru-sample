@@ -4,7 +4,6 @@ import { browserHistory } from 'react-router'
 import makeRootReducer from './reducers'
 import { updateLocation } from './location'
 import logger from 'redux-logger'
-import siruManager from './manager/siru'
 
 
 export default (initialState = {}) => {
@@ -44,7 +43,7 @@ export default (initialState = {}) => {
   store.unsubscribeHistory = browserHistory.listen(updateLocation(store))
 
   // start SiRu manager
-  siruManager(store, {apikey:'db07bbb6-4ee8-4eb7-b0c2-b8b2e5c69ef9', roomname: 'testroom'})
+//  siruManager(store, {apikey:'db07bbb6-4ee8-4eb7-b0c2-b8b2e5c69ef9', roomname: 'testroom'})
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {

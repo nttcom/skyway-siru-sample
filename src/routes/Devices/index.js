@@ -1,4 +1,4 @@
-// import { injectReducer } from '../../store/reducers'
+import { injectReducer } from '../../store/reducers'
 
 export default (store) => ({
   path : 'devices',
@@ -9,11 +9,17 @@ export default (store) => ({
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const Device = require('./containers/DevicesContainer').default
+
+      const SiRuManager = require('./manager/siru').default
+    
+      SiRuManager(store, {apikey:'db07bbb6-4ee8-4eb7-b0c2-b8b2e5c69ef9', roomname: 'testroom'})
       // const reducer = require('./modules/device').default
+      const siruReducer = require('./modules/siru').default
 
       /*  Add the reducer to the store on key 'counter'  */
-      // injectReducer(store, { key: 'counter', reducer })
+      injectReducer(store, { key: 'siru', reducer: siruReducer })
+
+      const Device = require('./containers/DevicesContainer').default
 
       /*  Return getComponent   */
       cb(null, Device)
