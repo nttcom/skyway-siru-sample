@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 496:
+/***/ 510:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13,7 +13,7 @@ webpackJsonp([2],{
 	
 	var _config = __webpack_require__(310);
 	
-	var _HomeView = __webpack_require__(497);
+	var _HomeView = __webpack_require__(511);
 	
 	var _HomeView2 = _interopRequireDefault(_HomeView);
 	
@@ -56,7 +56,7 @@ webpackJsonp([2],{
 
 /***/ }),
 
-/***/ 497:
+/***/ 511:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -74,7 +74,7 @@ webpackJsonp([2],{
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	__webpack_require__(498);
+	__webpack_require__(512);
 	
 	var _reactRouter = __webpack_require__(228);
 	
@@ -216,13 +216,13 @@ webpackJsonp([2],{
 
 /***/ }),
 
-/***/ 498:
+/***/ 512:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(499);
+	var content = __webpack_require__(513);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(388)(content, {});
@@ -231,8 +231,8 @@ webpackJsonp([2],{
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(499, function() {
-				var newContent = __webpack_require__(499);
+			module.hot.accept(513, function() {
+				var newContent = __webpack_require__(513);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -243,7 +243,7 @@ webpackJsonp([2],{
 
 /***/ }),
 
-/***/ 499:
+/***/ 513:
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(387)();
@@ -259,4 +259,4 @@ webpackJsonp([2],{
 /***/ })
 
 });
-//# sourceMappingURL=2.home.ed9738e7d0e2db1124e1.js.map
+//# sourceMappingURL=2.home.0152d06eb5d652bda414.js.map
