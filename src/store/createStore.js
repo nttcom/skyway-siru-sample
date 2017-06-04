@@ -1,10 +1,9 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import { browserHistory } from 'react-router'
-import makeRootReducer from './reducers'
+import { makeRootReducer, injectReducer } from './reducers'
+import { init } from '../routes/Home/modules/config'
 import { updateLocation } from './location'
-import logger from 'redux-logger'
-
 
 export default (initialState = {}) => {
   // ======================================================
@@ -42,8 +41,10 @@ export default (initialState = {}) => {
   // To unsubscribe, invoke `store.unsubscribeHistory()` anytime
   store.unsubscribeHistory = browserHistory.listen(updateLocation(store))
 
-  // start SiRu manager
-//  siruManager(store, {apikey:'db07bbb6-4ee8-4eb7-b0c2-b8b2e5c69ef9', roomname: 'testroom'})
+  // fixme : need to move config reducer from Home to global
+  const configReducer = require('../routes/Home/modules/config').default
+  injectReducer(store, { key: 'config', reducer: configReducer })
+  store.dispatch(init())
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {

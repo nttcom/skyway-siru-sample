@@ -10,18 +10,20 @@ export default (store) => ({
       /*  Webpack - use require callback to define
           dependencies for bundling   */
 
-      const SiRuManager = require('./manager/siru').default
-    
-      SiRuManager(store, {apikey:'db07bbb6-4ee8-4eb7-b0c2-b8b2e5c69ef9', roomname: 'testroom'})
-      // const reducer = require('./modules/device').default
-      const siruReducer = require('./modules/siru').default
+      // get apikey and roomname from redux store
+      const { apikey, roomname } = store.getState().config
 
-      /*  Add the reducer to the store on key 'counter'  */
+      // inject reducer of siru into redux store
+      const siruReducer = require('./modules/siru').default
       injectReducer(store, { key: 'siru', reducer: siruReducer })
 
-      const Device = require('./containers/DevicesContainer').default
+      // start SiRuManager
+      const SiRuManager = require('./manager/siru').default
+      SiRuManager(store, { apikey, roomname })
 
       /*  Return getComponent   */
+      const Device = require('./containers/DevicesContainer').default
+
       cb(null, Device)
 
     /* Webpack named bundle   */
