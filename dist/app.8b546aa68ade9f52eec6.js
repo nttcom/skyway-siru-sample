@@ -19790,7 +19790,7 @@ webpackJsonp([0],[
 	
 	var createRoutes = exports.createRoutes = function createRoutes(store) {
 	  return {
-	    path: '/',
+	    path: ({"NODE_ENV":"development"}).PUBLIC_URL + '/',
 	    component: _CoreLayout2.default,
 	    indexRoute: (0, _Home2.default)(store),
 	    childRoutes: [(0, _Devices2.default)(store)]
@@ -20543,7 +20543,7 @@ webpackJsonp([0],[
 	
 	exports.default = function (store) {
 	  return {
-	    path: 'devices',
+	    path: ({"NODE_ENV":"development"}).PUBLIC_URL + 'devices',
 	    /*  Async getComponent is only invoked when route matches   */
 	    getComponent: function getComponent(nextState, cb) {
 	      /*  Webpack - use 'require.ensure' to create a split point
@@ -23094,4 +23094,4 @@ webpackJsonp([0],[
 
 /***/ })
 ]);
-//# sourceMappingURL=app.7c5806881ba7ac31da9b.js.map
+//# sourceMappingURL=app.8b546aa68ade9f52eec6.js.map
