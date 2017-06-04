@@ -174,9 +174,9 @@ webpackJsonp([1],Array(400).concat([
 	
 	exports.default = start;
 	
-	var _SiRuClient = __webpack_require__(416);
+	var _skywaySiruClient = __webpack_require__(416);
 	
-	var _SiRuClient2 = _interopRequireDefault(_SiRuClient);
+	var _skywaySiruClient2 = _interopRequireDefault(_skywaySiruClient);
 	
 	var _siru = __webpack_require__(400);
 	
@@ -253,7 +253,7 @@ webpackJsonp([1],Array(400).concat([
 	    var key = apikey;
 	    var config = { 'iceServers': iceServers };
 	    console.log(config);
-	    var client = new _SiRuClient2.default(roomname, { key: key, config: config });
+	    var client = new _skywaySiruClient2.default(roomname, { key: key, config: config });
 	
 	    setHandler({ client: client, dispatch: dispatch, apikey: apikey, roomname: roomname });
 	  }).catch(function (err) {
@@ -57593,4 +57593,4 @@ webpackJsonp([1],Array(400).concat([
 
 /***/ })
 ]));
-//# sourceMappingURL=1.devices.4743e84f2fdc63d8dbf4.js.map
+//# sourceMappingURL=1.devices.607b55ed220dae517141.js.map

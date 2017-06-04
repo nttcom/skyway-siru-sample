@@ -1,4 +1,4 @@
-import SiRuClient from 'SiRu-client'
+import SiRuClient from 'skyway-siru-client'
 
 import {
   connected,
