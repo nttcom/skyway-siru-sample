@@ -8,7 +8,7 @@ import Home from './Home'
 
 export const createRoutes = (store) => {
   return {
-    path        : process.env.PUBLIC_URL + '/',
+    path        : '/',
     component   : CoreLayout,
     indexRoute  : Home(store),
     childRoutes : [

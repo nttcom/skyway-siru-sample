@@ -1,7 +1,7 @@
 import { injectReducer } from '../../store/reducers'
 
 export default (store) => ({
-  path : process.env.PUBLIC_URL + 'devices',
+  path : 'devices',
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
     /*  Webpack - use 'require.ensure' to create a split point

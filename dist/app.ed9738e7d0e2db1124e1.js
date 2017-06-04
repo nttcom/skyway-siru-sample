@@ -18411,9 +18411,9 @@ webpackJsonp([0],[
 	exports.locationChange = locationChange;
 	exports.default = locationReducer;
 	
-	var _browserHistory = __webpack_require__(275);
+	var _hashHistory = __webpack_require__(283);
 	
-	var _browserHistory2 = _interopRequireDefault(_browserHistory);
+	var _hashHistory2 = _interopRequireDefault(_hashHistory);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -18448,7 +18448,7 @@ webpackJsonp([0],[
 	// ------------------------------------
 	// Reducer
 	// ------------------------------------
-	var initialState = _browserHistory2.default.getCurrentLocation();
+	var initialState = _hashHistory2.default.getCurrentLocation();
 	function locationReducer() {
 	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
 	  var action = arguments[1];
@@ -18676,7 +18676,7 @@ webpackJsonp([0],[
 	        _react2.default.createElement(
 	          'div',
 	          { style: { height: '100%' } },
-	          _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, children: routes })
+	          _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.hashHistory, children: routes })
 	        )
 	      );
 	    }
@@ -19790,7 +19790,7 @@ webpackJsonp([0],[
 	
 	var createRoutes = exports.createRoutes = function createRoutes(store) {
 	  return {
-	    path: ({"NODE_ENV":"development"}).PUBLIC_URL + '/',
+	    path: '/',
 	    component: _CoreLayout2.default,
 	    indexRoute: (0, _Home2.default)(store),
 	    childRoutes: [(0, _Devices2.default)(store)]
@@ -20543,7 +20543,7 @@ webpackJsonp([0],[
 	
 	exports.default = function (store) {
 	  return {
-	    path: ({"NODE_ENV":"development"}).PUBLIC_URL + 'devices',
+	    path: 'devices',
 	    /*  Async getComponent is only invoked when route matches   */
 	    getComponent: function getComponent(nextState, cb) {
 	      /*  Webpack - use 'require.ensure' to create a split point
@@ -23094,4 +23094,4 @@ webpackJsonp([0],[
 
 /***/ })
 ]);
-//# sourceMappingURL=app.8b546aa68ade9f52eec6.js.map
+//# sourceMappingURL=app.ed9738e7d0e2db1124e1.js.map
