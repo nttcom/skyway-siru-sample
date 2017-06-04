@@ -233,32 +233,23 @@ webpackJsonp([1],Array(400).concat([
 	  });
 	}
 	
-	function createIceServerSetting(_ref2) {
-	  var username = _ref2.username,
-	      password = _ref2.password,
-	      uris = _ref2.uris;
-	
+	function createIceServerSetting() {
 	  return new _promise2.default(function (resolve, reject) {
-	    resolve(uris.map(function (url) {
-	      return {
-	        url: url,
-	        credential: password,
-	        username: username
-	      };
-	    }));
+	    var iceServers = [{ 'url': 'stun:stun.skyway.io:3478' }, {
+	      'url': 'turn:52.41.145.197:443?transport=tcp',
+	      'credential': 's1rUu5ev',
+	      'username': 'siruuser'
+	    }];
+	    resolve(iceServers);
 	  });
 	}
 	
-	function start(_ref3, _ref4) {
-	  var dispatch = _ref3.dispatch;
-	  var apikey = _ref4.apikey,
-	      roomname = _ref4.roomname;
+	function start(_ref2, _ref3) {
+	  var dispatch = _ref2.dispatch;
+	  var apikey = _ref3.apikey,
+	      roomname = _ref3.roomname;
 	
-	  fetch('https://iot-turn.skyway.io/api/?api=demonstrationkey').then(function (res) {
-	    return res.json();
-	  }).then(function (json) {
-	    return createIceServerSetting(json);
-	  }).then(function (iceServers) {
+	  createIceServerSetting().then(function (iceServers) {
 	    var key = apikey;
 	    var config = { 'iceServers': iceServers };
 	    console.log(config);
@@ -57602,4 +57593,4 @@ webpackJsonp([1],Array(400).concat([
 
 /***/ })
 ]));
-//# sourceMappingURL=1.devices.0152d06eb5d652bda414.js.map
+//# sourceMappingURL=1.devices.4743e84f2fdc63d8dbf4.js.map

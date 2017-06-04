@@ -52,20 +52,22 @@ function setHandler ({ client, dispatch, apikey, roomname }) {
   })
 }
 
-function createIceServerSetting ({ username, password, uris }) {
+function createIceServerSetting () {
   return new Promise((resolve, reject) => {
-    resolve(uris.map(url => ({
-      url,
-      credential: password,
-      username
-    })))
+    const iceServers = [
+      { 'url': 'stun:stun.skyway.io:3478' },
+      {
+        'url': 'turn:52.41.145.197:443?transport=tcp',
+        'credential': 's1rUu5ev',
+        'username': 'siruuser'
+      }
+    ]
+    resolve(iceServers)
   })
 }
 
 export default function start ({ dispatch }, { apikey, roomname }) {
-  fetch('https://iot-turn.skyway.io/api/?api=demonstrationkey')
-    .then(res => res.json())
-    .then(json => createIceServerSetting(json))
+  createIceServerSetting()
     .then(iceServers => {
       const key = apikey
       const config = { 'iceServers' : iceServers }
