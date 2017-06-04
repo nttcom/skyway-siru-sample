@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './HomeView.scss'
+import { Link } from 'react-router'
 
 export const HomeView = ({ config, init, set_roomname, set_apikey }) => {
   const _setApikey = function (ev) { set_apikey(ev.target.value) }
@@ -10,9 +11,9 @@ export const HomeView = ({ config, init, set_roomname, set_apikey }) => {
       <div className='jumbotron'>
         <h1>SiRu sample dashboard</h1>
         <p>
-        Click 'go dashboard' after input your own
-        <strong>SkyWay API key</strong> and
-        <strong>room name for SiRu</strong>.
+        Click 'go dashboard' after input your
+        own <strong>SkyWay API key</strong> and
+        <strong> room name for SiRu</strong>.
         </p>
         <p>
           <small />
@@ -41,7 +42,7 @@ export const HomeView = ({ config, init, set_roomname, set_apikey }) => {
       </div>
       <p className='space-1' />
       <p>
-        <a className='btn btn-primary btn-lg' href='./devices'>start dashboard</a>
+        <Link to='/devices'><button className='btn btn-primary btn-lg'>start dashboard</button></Link>
       </p>
       <p className='space-6' />
       <div className='well well-lg'>

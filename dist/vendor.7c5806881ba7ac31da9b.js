@@ -90,7 +90,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5a2b5cecc714edf771fd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7c5806881ba7ac31da9b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -625,7 +625,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "http://10.49.52.206:3000/";
+/******/ 	__webpack_require__.p = "./";
 /******/
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
@@ -13138,4 +13138,4 @@
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=vendor.5a2b5cecc714edf771fd.js.map
+//# sourceMappingURL=vendor.7c5806881ba7ac31da9b.js.map

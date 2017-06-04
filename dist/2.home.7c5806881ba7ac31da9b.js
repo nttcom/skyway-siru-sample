@@ -76,6 +76,8 @@ webpackJsonp([2],{
 	
 	__webpack_require__(498);
 	
+	var _reactRouter = __webpack_require__(228);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var HomeView = exports.HomeView = function HomeView(_ref) {
@@ -104,7 +106,7 @@ webpackJsonp([2],{
 	      _react2.default.createElement(
 	        'p',
 	        null,
-	        'Click \'go dashboard\' after input your own',
+	        'Click \'go dashboard\' after input your own ',
 	        _react2.default.createElement(
 	          'strong',
 	          null,
@@ -114,7 +116,7 @@ webpackJsonp([2],{
 	        _react2.default.createElement(
 	          'strong',
 	          null,
-	          'room name for SiRu'
+	          ' room name for SiRu'
 	        ),
 	        '.'
 	      ),
@@ -166,9 +168,13 @@ webpackJsonp([2],{
 	      'p',
 	      null,
 	      _react2.default.createElement(
-	        'a',
-	        { className: 'btn btn-primary btn-lg', href: './devices' },
-	        'start dashboard'
+	        _reactRouter.Link,
+	        { to: '/devices' },
+	        _react2.default.createElement(
+	          'button',
+	          { className: 'btn btn-primary btn-lg' },
+	          'start dashboard'
+	        )
 	      )
 	    ),
 	    _react2.default.createElement('p', { className: 'space-6' }),
@@ -253,4 +259,4 @@ webpackJsonp([2],{
 /***/ })
 
 });
-//# sourceMappingURL=2.home.5a2b5cecc714edf771fd.js.map
+//# sourceMappingURL=2.home.7c5806881ba7ac31da9b.js.map

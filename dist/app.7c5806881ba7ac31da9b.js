@@ -21975,7 +21975,7 @@ webpackJsonp([0],[
 	  };
 	}
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, "?path=http://10.49.52.206:3000/__webpack_hmr", __webpack_require__(220)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, "?path=./__webpack_hmr", __webpack_require__(220)(module)))
 
 /***/ }),
 /* 506 */
@@ -23094,4 +23094,4 @@ webpackJsonp([0],[
 
 /***/ })
 ]);
-//# sourceMappingURL=app.5a2b5cecc714edf771fd.js.map
+//# sourceMappingURL=app.7c5806881ba7ac31da9b.js.map
