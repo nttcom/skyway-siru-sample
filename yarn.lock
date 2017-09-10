@@ -5470,9 +5470,9 @@ sinon@^1.17.5:
     samsam "1.1.2"
     util ">=0.10.3 <1"
 
-skyway-siru-client@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/skyway-siru-client/-/skyway-siru-client-0.0.3.tgz#a0c4676dcae4728c54177cf25a67d87c4194a239"
+skyway-siru-client@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/skyway-siru-client/-/skyway-siru-client-0.0.6.tgz#78081d98404611324d3552e24dee1aea03ccd21e"
   dependencies:
     enum "^2.4.0"
     events "^1.1.0"
